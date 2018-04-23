@@ -1,3 +1,6 @@
+setTimeout(annoy, 2000);
+
+function annoy(){
 	var answer = prompt("Are we there yet?");
 	var counter = 1
 
@@ -7,5 +10,5 @@
 	}
 
 	alert("Yay, we finally made it! You achieved level " + counter);
-
+}
 
