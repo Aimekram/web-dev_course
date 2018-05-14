@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+	<title>Score Keeper</title>
+
+	<style type="text/css">
+		.winner {
+			background-color: green;
+		}
+	</style>
+</head>
+
+<body>
+	<h1><span id="p1Display">0</span> to <span id="p2Display">0</span></h1>
+
+	<h2>Playing to: <span>0</span></h2>
+
+	<input type="number" min="0">
+	<button id="p1btn">Player One</button>
+	<button id="p2btn">Player Two</button>
+	<button id="reset">Reset</button>
+
+<script>
+	let p1Button = document.getElementById("p1btn");
+	let p2Button = document.getElementById("p2btn");
+	let p1Display = document.getElementById("p1Display");
+	let p2Display = document.getElementById("p2Display");
+	let numInput = document.querySelector("input");
+	let winScoreDisplay = document.querySelector("h2 span");
+	let resetBtn = document.getElementById("reset");
+
+	let p1Score = 0;
+	let p2Score = 0;
+
+	let winScore = 5;
+	let gameOver = false;
+
+	function reset() {
+		p1Score = 0; 
+		p2Score = 0;
+		p1Display.textContent = 0;
+		p2Display.textContent = 0;
+		p1Display.classList.remove("winner");
+		p2Display.classList.remove("winner");
+		gameOver = false;
+	};
+
+	p1Button.addEventListener("click", function(){
+		if (!gameOver) {
+			p1Score++;
+			if (p1Score === winScore) {
+				p1Display.classList.add("winner");
+				gameOver = "true"
+			}
+			p1Display.textContent = p1Score;
+		}
+	});
+
+	p2Button.addEventListener("click", function(){
+		if (!gameOver) {
+			p2Score++;
+			if (p2Score === winScore) {
+				p2Display.classList.add("winner");
+				gameOver = true;
+			}
+			p2Display.textContent = p2Score;
+		}
+	});
+
+	resetBtn.addEventListener("click", function() {
+		reset()
+	});
+
+	numInput.addEventListener("change", function(){
+		winScoreDisplay.textContent = this.value;
+		winScore = Number(this.value);
+		reset();
+	});
+
+
+
+</script>
+
+</body>
+</html>
