@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Guess the Color</title>
+	<link rel="stylesheet" href="colorGame.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+
+
+<body>
+
+<div class="header">
+    <h1>GUESS THE COLOR</h1>
+		
+		<div class="secondLine">Select the square which represents the color:</div>
+		
+		<div id="pickedColor">RGB</div>
+</div>
+
+<div id="stripe">
+	<button id="reset">NEW COLORS</button>
+	<div id="tryAgain"></div>
+	<button id="easyBtn">EASY</button>
+	<button id="hardBtn" class="selected">HARD</button>
+</div>
+
+
+<div id="container">
+	<div class="square"></div>
+	<div class="square"></div>
+	<div class="square"></div>
+	<div class="square"></div>
+	<div class="square"></div>
+	<div class="square"></div>
+</div>
+
+<script type="text/javascript" src="colorGame.js"></script>
+</body>
+</html>
